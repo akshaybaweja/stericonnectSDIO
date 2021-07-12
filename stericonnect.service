@@ -1,0 +1,10 @@
+ [Unit]
+ Description=Stericonnect Script
+ After=multi-user.target
+
+ [Service]
+ Type=idle
+ ExecStart=bash /home/pi/stericonnect/run.sh
+
+ [Install]
+ WantedBy=multi-user.target
