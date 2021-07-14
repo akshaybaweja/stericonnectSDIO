@@ -18,7 +18,7 @@ sd.on()
 
 timestamp = datetime.datetime.now().strftime('%Y-%m-%dT%H-%M-%S')
 
-script_basedir = '/home/pi/stericonnect/'
+script_basedir = '/home/pi/stericonnectSDIO/'
 
 log_file_path = 'logs/'
 log_file_name = 'stericonnect_'+timestamp+'.log'

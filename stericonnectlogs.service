@@ -4,7 +4,7 @@
 
  [Service]
  Type=idle
- ExecStart=/usr/bin/python3 /home/pi/stericonnect/logs.py
+ ExecStart=/usr/bin/python3 /home/pi/stericonnectSDIO/logs.py
 
  [Install]
  WantedBy=multi-user.target

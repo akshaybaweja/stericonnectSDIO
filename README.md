@@ -34,27 +34,25 @@ sudo raspi-config
 * Select ```Network at Boot```
 * Select ```Yes```
 
+## Install [WiFi Driver for USB Module](./usbdriver.md)
+Click above link and follow the steps. Once done continue below steps.
+
 ## Install Firmware
 ```
 git clone https://github.com/akshaybaweja/stericonnectSDIO
 ```
 ### For Production Mode
 ```
-bash stericonnect/init.sh
+bash stericonnectSDIO/init.sh
 ```
 
 To change server - login to Raspberry Pi via SSH
 
 ```
-sudo nano stericonnect/config.ini
+sudo nano stericonnectSDIO/config.ini
 ```
 
 Under section ```Storage```, replace ```URL``` with server address you wish to add.
-
-### For Development Mode
-```
-bash stericonnect/dev/init.sh
-```
 
 ## Access Log Files
 Goto ```<ip-address>:8000``` to access logs for the stericonnect
@@ -70,9 +68,4 @@ sudo journalctl -u stericonnect
 ```
 ```
 sudo journalctl -u stericonnectlogs
-```
-
-### Test Mounts and Unmounts
-```
-python3 /home/pi/stericonnect/dev/mountTest.py
 ```

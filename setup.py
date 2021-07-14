@@ -4,7 +4,7 @@ import csv
 
 print("Entering SETUP Mode")
 
-script_basedir = '/home/pi/stericonnect/'
+script_basedir = '/home/pi/stericonnectSDIO/'
 media_path = 'media/'
 sd_path = media_path + 'usb/'
 log_folder = 'logs/'

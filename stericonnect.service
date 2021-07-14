@@ -4,7 +4,7 @@
 
  [Service]
  Type=idle
- ExecStart=bash /home/pi/stericonnect/run.sh
+ ExecStart=bash /home/pi/stericonnectSDIO/run.sh
 
  [Install]
  WantedBy=multi-user.target
