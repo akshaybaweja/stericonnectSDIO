@@ -18,6 +18,7 @@ network={
 }
 ```
 4. Save the ```wpa_supplicant.conf```
+5. Copy ```config.txt``` from ```pre-setup-files``` and replace with the one in SD Card
 5. Eject SD Card and insert back to Raspberry Pi
 
 ## Login to SSH
