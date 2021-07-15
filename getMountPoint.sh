@@ -1,5 +1,5 @@
 #!/bin/bash
-mountStatus=$( df -kh | grep /dev/mmcblk01p0 )
+mountStatus=$( df -kh | grep /dev/mmcblk1p1 )
 if [ $? -eq 0 ]
 then
         read  -a mountOutput <<< $mountStatus
