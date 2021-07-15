@@ -89,7 +89,8 @@ def resetUSB():
 
 def mountSD():
 	logging.info('Mounting SD Card')
-
+	global sd_path
+	
 	mountTimeout = 5
 	startTime = time()
 	while True:
