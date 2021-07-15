@@ -11,8 +11,8 @@ import subprocess
 import sys
 import csv
 
-led = LED(6)
-btn = Button(5)
+led = LED(13)
+btn = Button(19)
 sd = LED(16)
 sd.on()
 
