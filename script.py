@@ -231,6 +231,7 @@ def init():
 		logging.info('HW ID '+hardware_id)
 	
 	led.off()
+	turn_off()
 	logging.info('Initialized System')
 
 init()
