@@ -62,7 +62,7 @@ dtparam=audio=on
 #dtoverlay=disable-wifi
 
 # Enable SDIO
-dtoverlay=sdio,poll_once=off
+#dtoverlay=sdio,poll_once=off
 
 [pi4]
 # Enable DRM VC4 V3D driver on top of the dispmanx display stack
