@@ -45,7 +45,7 @@ git clone https://github.com/akshaybaweja/stericonnectSDIO
 ```
 
 ```
-bash stericonnectSDIO/init.sh
+sudo bash stericonnectSDIO/init.sh
 ```
 
 To change server - login to Raspberry Pi via SSH
