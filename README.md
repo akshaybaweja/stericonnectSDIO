@@ -18,12 +18,12 @@ network={
 }
 ```
 4. Save the ```wpa_supplicant.conf```
-5. Copy ```config.txt``` from ```pre-setup-files``` and replace with the one in SD Card
 5. Eject SD Card and insert back to Raspberry Pi
 
 ## Login to SSH
+Find IP address of your pi using your router settings page and in terminal enter the following commands
 ```
-login as: pi
+ssh pi@<ip-address>
 password: raspberry
 ```
 
@@ -34,25 +34,24 @@ sudo raspi-config
 * Select ```System Options```
 * Select ```Network at Boot```
 * Select ```Yes```
-
-## Install [WiFi Driver for USB Module](./usbdriver.md)
-Click above link and follow the steps. Once done continue below steps.
+* Select ```Localization Options```
+* Select ```Change Timezone```
+* Select your Timezone
+* Exit ```raspi-config```
 
 ## Install Firmware
 ```
 git clone https://github.com/akshaybaweja/stericonnectSDIO
 ```
-### For Production Mode
+
 ```
 bash stericonnectSDIO/init.sh
 ```
 
 To change server - login to Raspberry Pi via SSH
-
 ```
 sudo nano stericonnectSDIO/config.ini
 ```
-
 Under section ```Storage```, replace ```URL``` with server address you wish to add.
 
 ## Access Log Files
@@ -61,7 +60,7 @@ Goto ```<ip-address>:8000``` to access logs for the stericonnect
 ## Debug
 ### Find Process ID
 ```
-ps aux | grep /home/pi/sterionnect/ 
+ps aux | grep stericonnect 
 ```
 ### View System Logs
 ```

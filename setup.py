@@ -28,13 +28,6 @@ def getSerial():
 
 os.chdir(script_basedir)
 os.system("git pull")
-
-# if(not os.path.isdir(sd_path)):
-# 	print(">SYSTEM: Creating Mount Point")
-# 	os.mkdir(media_path)
-# 	os.mkdir(sd_path)
-# 	os.system("sudo chown -R pi:pi " + sd_path)
-# 	print(">SYSTEM: Created Mount Point")
     
 if(not os.path.isdir(log_folder)):
 	print(">SYSTEM: Creating Log Folder")
