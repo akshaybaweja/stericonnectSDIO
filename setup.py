@@ -9,7 +9,7 @@ media_path = 'media/'
 sd_path = media_path + 'usb/'
 log_folder = 'logs/'
 
-configfile_name = "config.ini"
+configfile_name = script_basedir + "config.ini"
 fileKeeper = script_basedir + "syncedFiles.csv"
 
 def getSerial():
