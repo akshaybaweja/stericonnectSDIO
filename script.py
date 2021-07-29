@@ -14,7 +14,6 @@ import csv
 led = LED(13)
 btn = Button(19)
 sd = LED(16)
-sd.on()
 
 timestamp = datetime.datetime.now().strftime('%Y-%m-%dT%H-%M-%S')
 
@@ -63,29 +62,14 @@ def runCommand(cmd, shouldLog = True):
 	return code, out
 
 def turn_on():
-	sd.off()
+	sd.on()
 	logging.info('STERICONNECT :: Disconnected from Data Logger')
 	logging.info('STERICONNECT :: Connected to RPi')
 
 def turn_off():
-	sd.on()
+	sd.off()
 	logging.info('STERICONNECT -- Disconnected from RPi')
 	logging.info('STERICONNECT -- Connected to Data Logger')
-
-def turn_off_usb():
-	logging.info("Turning OFF USB Ports")
-	_, _ = runCommand('sudo bash ' + script_basedir + 'usbPowerOFF.sh', True)
-
-def turn_on_usb():
-	logging.info("Turning ON USB Ports")
-	_, _ = runCommand('sudo bash ' + script_basedir + 'usbPowerON.sh', True)
-
-def resetUSB():
-	logging.info("Resetting USB Ports")
-	turn_off_usb()
-	sleep(5)
-	turn_on_usb()
-	sleep(5)
 
 def mountSD():
 	logging.info('Mounting SD Card')
