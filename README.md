@@ -44,11 +44,26 @@ sudo raspi-config
 git clone https://github.com/akshaybaweja/stericonnectSDIO
 ```
 
+Connect TP-Link WiFi Module and run the following command
+
 ```
 sudo bash stericonnectSDIO/init.sh
 ```
 
-To change server - login to Raspberry Pi via SSH
+Once the boot is completed the IP address for raspberry pi might have changed. Get the new IP anddress and ssh into it. Once you've sshed to raspberry pi run
+
+```
+sudo nano /boot/config.txt
+```
+
+- Look for ```#Enable SDIO```
+and remove the ```#``` in the next line to it.
+
+- Save the file using ```Ctrl + X``` and press Enter and reboot the Pi by inputting command ```sudo reboot now```
+
+The system should be successfully configured at this point in time.
+
+### To change server - login to Raspberry Pi via SSH
 ```
 sudo nano stericonnectSDIO/config.ini
 ```
