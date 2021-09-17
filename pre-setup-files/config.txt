@@ -2,7 +2,7 @@
 # http://rpf.io/configtxt
 # Some settings may impact device functionality. See link above for details
 
-dtdebug=on
+#dtdebug=on
 
 # uncomment if you get no picture on HDMI for a default "safe" mode
 #hdmi_safe=1
@@ -47,7 +47,6 @@ dtdebug=on
 # Uncomment some or all of these to enable the optional hardware interfaces
 #dtparam=i2c_arm=on
 #dtparam=i2s=on
-#dtparam=spi=on
 
 # Uncomment this to enable infrared communication.
 #dtoverlay=gpio-ir,gpio_pin=17
@@ -56,13 +55,10 @@ dtdebug=on
 # Additional overlays and parameters are documented /boot/overlays/README
 
 # Enable audio (loads snd_bcm2835)
-dtparam=audio=on
-
-# Disable WiFi
-#dtoverlay=disable-wifi
+#dtparam=audio=on
 
 # Enable SDIO
-#dtoverlay=sdio,poll_once=off
+dtoverlay=sdio,poll_once=off
 
 [pi4]
 # Enable DRM VC4 V3D driver on top of the dispmanx display stack
