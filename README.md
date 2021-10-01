@@ -52,15 +52,6 @@ sudo bash stericonnectSDIO/init.sh
 
 Once the boot is completed the IP address for raspberry pi might have changed. Get the new IP anddress and ssh into it. Once you've sshed to raspberry pi run
 
-```
-sudo nano /boot/config.txt
-```
-
-- Look for ```#Enable SDIO```
-and remove the ```#``` in the next line to it.
-
-- Save the file using ```Ctrl + X``` and press Enter and reboot the Pi by inputting command ```sudo reboot now```
-
 The system should be successfully configured at this point in time.
 
 ### To change server - login to Raspberry Pi via SSH
@@ -68,6 +59,8 @@ The system should be successfully configured at this point in time.
 sudo nano stericonnectSDIO/config.ini
 ```
 Under section ```Storage```, replace ```URL``` with server address you wish to add.
+
+Reboot and the system should bee ready to use.
 
 ## Access Log Files
 Goto ```<ip-address>:8000``` to access logs for the stericonnect
