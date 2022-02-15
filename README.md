@@ -1,8 +1,13 @@
 # SteriConnect
 
+## Raspberry Pi Image Download
+1. Get [this version of RaspiOS](https://downloads.raspberrypi.org/raspios_armhf/images/raspios_armhf-2021-05-28/2021-05-07-raspios-buster-armhf.zip)
+2. Extract `.zip` file
+
 ## Flashing Raspberry Pi's SD Card
 1. Download and Install [Raspberry Pi Imager](https://www.raspberrypi.org/software/)
 2. Follow [this 40 second video tutorial on how to flash OS on SD Card](https://www.youtube.com/watch?v=J024soVgEeM)
+3. Instead of choosing default OS select the image file downloaded in previous step.
 
 ## Setup
 1. Remove and reinstert the SD Card
