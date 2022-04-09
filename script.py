@@ -13,6 +13,7 @@ import csv
 
 led = LED(20)
 btn = Button(21)
+pwr = LED(6)
 sd_enable = LED(12)
 sd_control = LEDBoard(13,16,19)
 
@@ -64,17 +65,25 @@ def runCommand(cmd, shouldLog = True):
 
 def turn_on():
 	sd_enable.off()
+	sleep(0.1)
+	pwr.off()
 	sd_control.on()
 	sleep(1)
 	sd_enable.on()
+	sleep(0.05)
+	pwr.on()
 	logging.info('STERICONNECT :: Disconnected from Data Logger')
 	logging.info('STERICONNECT :: Connected to RPi')
 
 def turn_off():
 	sd_enable.off()
+	sleep(0.1)
+	pwr.off()
 	sd_control.off()
 	sleep(1)
 	sd_enable.on()
+	sleep(0.05)
+	pwr.on()
 	logging.info('STERICONNECT -- Disconnected from RPi')
 	logging.info('STERICONNECT -- Connected to Data Logger')
 
@@ -214,6 +223,8 @@ def init():
 	
 	# Keep SD Card Disabled
 	sd_enable.off()
+	pwr.off()
+
 	logging.info('Initializing System')
 	led.on()
 	

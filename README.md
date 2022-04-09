@@ -42,6 +42,7 @@ sudo raspi-config
 ## Install Firmware
 ```
 git clone https://github.com/akshaybaweja/stericonnectSDIO
+git checkout v4.0
 ```
 
 Connect TP-Link WiFi Module and run the following command
