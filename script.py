@@ -72,7 +72,7 @@ def turn_on():
 
 def turn_off():
 	sd_enable.off()
-	sd_control.on()
+	sd_control.off()
 	sleep(1)
 	sd_enable.on()
 	logging.info('STERICONNECT -- Disconnected from RPi')
@@ -212,6 +212,8 @@ def buttonRoutine():
 def init():
 	global hardware_id
 	
+	# Keep SD Card Disabled
+	sd_enable.off()
 	logging.info('Initializing System')
 	led.on()
 	
@@ -221,9 +223,8 @@ def init():
 		logging.error('Invalid Hardware ID')
 	else:
 		logging.info('HW ID '+hardware_id)
-	
-	led.off()
 	turn_off()
+	led.off()
 	logging.info('Initialized System')
 
 init()
