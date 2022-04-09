@@ -11,9 +11,10 @@ import subprocess
 import sys
 import csv
 
-led = LED(13)
-btn = Button(19)
-sd = LED(16)
+led = LED(20)
+btn = Button(21)
+sd_enable = LED(12)
+sd_control = LEDBoard(13,16,19)
 
 timestamp = datetime.datetime.now().strftime('%Y-%m-%dT%H-%M-%S')
 
@@ -62,12 +63,18 @@ def runCommand(cmd, shouldLog = True):
 	return code, out
 
 def turn_on():
-	sd.on()
+	sd_enable.off()
+	sd_control.on()
+	sleep(1)
+	sd_enable.on()
 	logging.info('STERICONNECT :: Disconnected from Data Logger')
 	logging.info('STERICONNECT :: Connected to RPi')
 
 def turn_off():
-	sd.off()
+	sd_enable.off()
+	sd_control.on()
+	sleep(1)
+	sd_enable.on()
 	logging.info('STERICONNECT -- Disconnected from RPi')
 	logging.info('STERICONNECT -- Connected to Data Logger')
 
