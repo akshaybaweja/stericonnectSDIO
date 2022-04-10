@@ -20,7 +20,7 @@ sudo systemctl enable stericonnectlogs.service
 sudo systemctl enable stericonnect.service
 echo "Service and Routine Setup Complete"
 
-sudo echo -en "\n\ndtoverlay=sdio,poll_once=off" >> /boot/config.txt
-
+sudo echo -en "\n\ndtoverlay=sdio,poll_once=off\n" >> /boot/config.txt
+sudo echo -en "dtparam=sdio_overclock=25\n">> /boot/config.txt
 echo "Rebooting Raspberry Pi..."
 sleep 1 && sudo reboot
