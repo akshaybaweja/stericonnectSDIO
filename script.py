@@ -66,24 +66,24 @@ def runCommand(cmd, shouldLog = True):
 def turn_on():
 	sd_enable.off()
 	sleep(0.1)
-	pwr.off()
+	pwr.on()
 	sd_control.on()
 	sleep(1)
 	sd_enable.on()
 	sleep(0.05)
-	pwr.on()
+	pwr.off()
 	logging.info('STERICONNECT :: Disconnected from Data Logger')
 	logging.info('STERICONNECT :: Connected to RPi')
 
 def turn_off():
 	sd_enable.off()
 	sleep(0.1)
-	pwr.off()
+	pwr.on()
 	sd_control.off()
 	sleep(1)
 	sd_enable.on()
 	sleep(0.05)
-	pwr.on()
+	pwr.off()
 	logging.info('STERICONNECT -- Disconnected from RPi')
 	logging.info('STERICONNECT -- Connected to Data Logger')
 
@@ -223,7 +223,7 @@ def init():
 	
 	# Keep SD Card Disabled
 	sd_enable.off()
-	pwr.off()
+	pwr.on()
 
 	logging.info('Initializing System')
 	led.on()
