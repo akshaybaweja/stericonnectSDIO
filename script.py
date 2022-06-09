@@ -66,24 +66,28 @@ def runCommand(cmd, shouldLog = True):
 def turn_on():
 	sd_enable.off()
 	sleep(0.1)
-	pwr.on()
-	sd_control.on()
-	sleep(1)
-	sd_enable.on()
-	sleep(0.05)
 	pwr.off()
+	sleep(0.1)
+	sd_control.on()
+	sleep(0.1)
+	pwr.on()
+	sleep(0.1)
+	sd_enable.on()
+	sleep(0.1)
 	logging.info('STERICONNECT :: Disconnected from Data Logger')
 	logging.info('STERICONNECT :: Connected to RPi')
 
 def turn_off():
 	sd_enable.off()
 	sleep(0.1)
-	pwr.on()
+	pwr.off()
+	sleep(0.1)
 	sd_control.off()
 	sleep(1)
 	sd_enable.on()
-	sleep(0.05)
+	sleep(0.1)
 	pwr.off()
+	sleep(0.1)
 	logging.info('STERICONNECT -- Disconnected from RPi')
 	logging.info('STERICONNECT -- Connected to Data Logger')
 
@@ -223,7 +227,7 @@ def init():
 	
 	# Keep SD Card Disabled
 	sd_enable.off()
-	pwr.on()
+	pwr.off()
 
 	logging.info('Initializing System')
 	led.on()
@@ -234,7 +238,7 @@ def init():
 		logging.error('Invalid Hardware ID')
 	else:
 		logging.info('HW ID '+hardware_id)
-	turn_off()
+	turn_on()
 	led.off()
 	logging.info('Initialized System')
 
